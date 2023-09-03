@@ -67,7 +67,6 @@ def scrape_news(url, limit):
         result["items"] = items_list
 
     data_table_title = f"{'_'.join(result['title'].split()[2:])}_{'_'.join(result['pubDate'].split()[1:4])}"
-    print(data_table_title)
 
     df = pd.DataFrame(items_list)
     df.to_csv(f"{data_table_title}.csv")
